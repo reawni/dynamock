@@ -1,5 +1,19 @@
 # Dynamic Mock
 
+#how to use DynaMock
+        
+        //auto create DI
+        var _testSevice = DynaMock.NewInstance<TestService>() 
+        
+        //get created DI
+        _testSevice.GetMock<IRepository5>().Setup(fn => fn.GetNumber()).Returns(x); 
+        
+        //call public function
+        _testSevice.Foo_1(a, b);
+        
+        //call private function
+        _testSevice.InvokeMethod("Foo_2",param1,param2);
+        
 #Problem 1 : too many DI in our service
 
         private readonly IRepository1 repository1;
@@ -59,6 +73,6 @@
             var x = 3;
 
             _testSevice.GetMock<IRepository5>().Setup(fn => fn.GetNumber()).Returns(x);
-            var result = _testSevice.InvokeMethod("Foo_2", new object[] { a, b });
+            var result = _testSevice.InvokeMethod("Foo_2", a, b);
             Assert.Equal(5, result);
         }
