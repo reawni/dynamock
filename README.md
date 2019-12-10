@@ -12,7 +12,7 @@
         _testSevice.Foo_1(a, b);
         
         //call private function
-        _testSevice.InvokeMethod("Foo_2", new object[] { a, b });
+        _testSevice.InvokeMethod("Foo_2",param1,param2);
         
 #Problem 1 : too many DI in our service
 
@@ -73,6 +73,6 @@
             var x = 3;
 
             _testSevice.GetMock<IRepository5>().Setup(fn => fn.GetNumber()).Returns(x);
-            var result = _testSevice.InvokeMethod("Foo_2", new object[] { a, b });
+            var result = _testSevice.InvokeMethod("Foo_2", a, b);
             Assert.Equal(5, result);
         }
