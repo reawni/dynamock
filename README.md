@@ -1,6 +1,6 @@
 # Dynamic Mock
 
-#how to use Dynamock
+#how to use DynaMock
         
         //auto create DI
         var _testSevice = DynaMock.NewInstance<TestService>() 
