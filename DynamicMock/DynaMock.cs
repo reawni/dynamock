@@ -9,7 +9,8 @@ namespace DynamicMock
 {
     public static class DynaMock
     {
-        public static object InvokeMethod<T>(this T obj, string methodName, object[] param) where T : class
+
+        public static object InvokeMethod<T>(this T obj, string methodName,params object[] param) where T : class
         {
             MethodInfo privMethod = obj.GetType().GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
             return privMethod.Invoke(obj, param);

@@ -33,7 +33,7 @@ namespace DynamicMock
             var x = 3;
 
             _testSevice.GetMock<IRepository5>().Setup(fn => fn.GetNumber()).Returns(x);
-            var result = _testSevice.InvokeMethod("Foo_2", new object[] { a, b });
+            var result = _testSevice.InvokeMethod("Foo_2", a, b);
             Assert.Equal(5, result);
         }
     }
