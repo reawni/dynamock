@@ -8,7 +8,7 @@
         //get created DI
         _testSevice.GetMock<IRepository5>().Setup(fn => fn.GetNumber()).Returns(x); 
         
-        //call public fucntion
+        //call public function
         _testSevice.Foo_1(a, b);
         
         //call private function
